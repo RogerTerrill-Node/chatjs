@@ -26,7 +26,7 @@ function response(request, response) {
 
 io.on('connection', function(socket) {
     socket.on('send message', function(sent_msg, callback) {
-        sent_msg = 'Message:  ' + sent_msg;
+        sent_msg = sent_msg;
         io.sockets.emit('update messages', sent_msg);
         callback();
     });

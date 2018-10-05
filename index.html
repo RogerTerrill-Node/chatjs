@@ -9,7 +9,7 @@
 <body>
     <div id="history"></div>
     <form id="chat">
-        <input type="text" id="msg_text" name="msg_text" />
+        <input type="text" id="msg_text" name="msg_text" autocomplete="off" />
         <!-- <input type="submit" value="Send!" /> -->
     </form>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -23,6 +23,8 @@
                 $("form#chat #msg_text").val("");
             });
         });
+
+
         socket.on("update messages", function (msg) {
             var final_message = $("<p />").text(msg);
             $("#history").append(final_message);
